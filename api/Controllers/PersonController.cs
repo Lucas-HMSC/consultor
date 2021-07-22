@@ -24,7 +24,7 @@ namespace api.Controllers
         }
 
         [HttpPut]
-        public Person update(Person person)
+        public Person Update(Person person)
         {
             using (var connection = new MySqlConnection("Server=localhost;Database=consultas;Uid=root;Pwd=root;"))
             {
