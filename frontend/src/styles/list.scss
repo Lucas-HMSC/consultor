@@ -1,0 +1,30 @@
+.list-container {
+  margin-top: 1rem;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+    transition: filter 0.2s;
+
+    strong {
+      color: #333;
+    }
+
+    span {
+      flex: 1;
+      color: #82BBF2;
+      text-align: center;
+    }
+
+    &:hover {
+      border-color: #1e90ff;
+      filter: brightness(0.5);
+    }
+  }
+}

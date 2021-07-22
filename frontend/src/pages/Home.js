@@ -1,10 +1,25 @@
 import { useState } from "react";
+
 import { Button } from "../components/Button";
+import { List } from "../components/List";
 
 import '../styles/home.scss';
 
 export function Home() {
+  const [list, setList] = useState([]);
   const [showList, setShowList] = useState(false);
+
+  async function handleFetchList() {
+    const data = await fetch('https://localhost:44305/person');
+    const response = await data.json();
+    
+    setList(response);
+    setShowList(true);
+  }
+
+  function handleClickQuitOrReturn() {
+    if (showList) setShowList(false);
+  }
 
   return (
     <div id="home">
@@ -14,52 +29,31 @@ export function Home() {
         <div className="button-container">
           <Button 
             text='Montar lista'
-            onClick={() => setShowList(true)}
+            onClick={handleFetchList}
           />
           <Button 
             text='Limpar lista'
             onClick={() => setShowList(false)}
           />
-          <Button text='Sair/Voltar'/>
+          <Button 
+            text='Sair/Voltar'
+            onClick={handleClickQuitOrReturn}
+          />
         </div>
 
         {
           showList && (
-            <div className='list-container'>
-              <a href={`/details/1`}>
-                <strong>Nome fantasia: </strong><span>Prime Home Decor</span>
-              </a>
-              <a href={`/details/2`}>
-                <strong>Nome fantasia: </strong><span>Prime Home Decor</span>
-              </a>
-              <a href={`/details/3`}>
-                <strong>Nome fantasia: </strong><span>Prime Home Decor</span>
-              </a>
-              <a href={`/details/4`}>
-                <strong>Nome fantasia: </strong><span>Prime Home Decor</span>
-              </a>
-              <a href={`/details/5`}>
-                <strong>Nome fantasia: </strong><span>Prime Home Decor</span>
-              </a>
-              <a href={`/details/6`}>
-                <strong>Nome fantasia: </strong><span>Prime Home Decor</span>
-              </a>
-              <a href={`/details/7`}>
-                <strong>Nome fantasia: </strong><span>Prime Home Decor</span>
-              </a>
-              <a href={`/details/8`}>
-                <strong>Nome fantasia: </strong><span>Prime Home Decor</span>
-              </a>
-              <a href={`/details/9`}>
-                <strong>Nome fantasia: </strong><span>Prime Home Decor</span>
-              </a>
-              <a href={`/details/10`}>
-                <strong>Nome fantasia: </strong><span>Prime Home Decor</span>
-              </a>
-            </div>
+            list.map((item) => {
+              return (
+                <List 
+                  key={item.pessoA_ID}
+                  id={item.pessoA_ID}
+                  name={item.nomE_FANTASIA} 
+                />
+              )
+            })
           )
         }
-      
       </div>
     </div>
   );

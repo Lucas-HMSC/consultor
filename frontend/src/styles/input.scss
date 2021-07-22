@@ -1,0 +1,24 @@
+#input {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+
+  label {
+    font-weight: 700;
+    color: #1e90ff;
+  }
+
+  input {
+    width: 15rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    font: 400 16px 'Nunito', sans-serif;
+    padding: 0.5rem 0;
+
+    &:focus {
+      outline: none;
+      border-color: #82BBF2;
+    }
+  }
+}
