@@ -15,7 +15,7 @@
 ### Demonstração
 
 <p align="center">
-    <img align="center" src="./images/deonstration.gif" alt="GIF de demonstração da aplicação">
+    <img align="center" src="./images/demonstration.gif" alt="GIF de demonstração da aplicação">
 </p>
 
 ### Como executar
