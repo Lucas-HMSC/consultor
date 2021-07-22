@@ -1,0 +1,14 @@
+#button {
+  font: 700 1rem 'Nunito', sans-serif;
+  color: #1e90ff;
+  padding: 1rem;
+  border: 1px solid #82BBF2;
+  border-radius: 8px;
+  background-color: #B2CFEC;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #82BBF2;
+  }
+}

@@ -1,0 +1,24 @@
+CREATE DATABASE consultas;
+
+USE consultas;
+
+CREATE TABLE PESSOA (
+PESSOA_ID INT NOT NULL AUTO_INCREMENT,
+NOME_FANTASIA VARCHAR(255),
+CNPJ_CPF VARCHAR(20),
+PRIMARY KEY (PESSOA_ID)
+);
+
+INSERT INTO PESSOA (NOME_FANTASIA, CNPJ_CPF) VALUES 
+("Epic Prime", "64.442.128/0001-98"),
+("Games Igniter", "20.000.891/0001-93"),
+("Scrapbook LTDA", "07.145.117/0001-02"),
+("Pituca Comércio", "03.209.583/0001-53"),
+("Landmark Zear", "63.292.051/0001-54"),
+("Prodigy", "505.972.630-43"),
+("Maria Santos", "566.596.960-59"),
+("Miguel Rodrigues", "130.085.940-77"),
+("Arthur Souza", "261.818.390-89"),
+("Laura Pereira", "674.685.720-46");
+
+SELECT * FROM PESSOA;
